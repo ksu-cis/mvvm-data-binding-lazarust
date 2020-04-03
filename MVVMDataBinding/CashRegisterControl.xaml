@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="MVVMDataBinding.CashRegisterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMDataBinding"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Bottom">
+            <local:BillControl denom="One" quant="{Binding Path=Ones}"/>
+            <local:BillControl denom="Two" quant="{Binding Path=Twos}"/>
+            <local:BillControl denom="Five" quant="{Binding Path=Fives}"/>
+            <local:BillControl denom="Ten" quant="{Binding Path=Tens}"/>
+            <local:BillControl denom="Twenty" quant="{Binding Path=Twenties}"/>
+            <local:BillControl denom="Fifty" quant="{Binding Path=Fifties}"/>
+            <local:BillControl denom="Hundred" quant="{Binding Path=Hundreds}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+            <local:CointControl denom="Penny" quant="{Binding Path=Pennies}" />
+            <local:CointControl denom="Dime" quant="{Binding Path=Dimes}" />
+            <local:CointControl denom="Nickel" quant="{Binding Path=Nickels}"/>
+            <local:CointControl denom="Quarter" quant="{Binding Path=Quarters}"/>
+            <local:CointControl denom="HalfDollar" quant="{Binding Path=HalfDollars}"/>
+            <local:CointControl denom="Dollar" quant="{Binding Path=Dollars}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
